@@ -1,0 +1,13 @@
+& {
+  display: flex;
+  margin: 0 $spacer;
+
+  > * {
+    flex: 1;
+  }
+
+  .weekday {
+    color: $brand-color-primary;
+    margin: $spacer / 2;
+  }
+}

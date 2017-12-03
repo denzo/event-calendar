@@ -1,0 +1,13 @@
+{{#calendar-week startOfWeekDate=firstDay as |date|}}
+  <h5 class="weekday">{{moment-format date "ddd"}}</h5>
+{{/calendar-week}}
+{{#each weeks as |startOfWeekDate weekIndex|}}
+  {{#calendar-week startOfWeekDate=startOfWeekDate as |day dayIndex|}}
+    {{calendar-day
+      data-test-calendar-day-index=(concat weekIndex "-" dayIndex)
+      date=day
+      events=(get eventsByDay (moment-format day "YYYY-MM-DD"))
+      isInCurrentMonth=(is-same date day precision="month")
+      isToday=(is-same day today precision="day")}}
+  {{/calendar-week}}
+{{/each}}

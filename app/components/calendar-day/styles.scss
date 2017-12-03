@@ -1,0 +1,44 @@
+& {
+
+  &.not-in-current-month {
+    opacity: 0.5;
+  }
+
+  &.is-today {
+    .date {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  flex: 1;
+  min-width: 100px;
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.01);
+  margin: 1px;
+  padding: $spacer / 2;
+
+  .date {
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0;
+    margin: 0 0 $spacer / 2 0;
+  }
+
+  &:hover {
+    .date {
+      color: $brand-color-primary;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<h5 class="date" data-test-date>{{moment-format date "D"}}</h5>
+<ul>
+  {{#each events as |event|}}
+    <li class="event">{{event.title}}</li>
+  {{/each}}
+</ul>

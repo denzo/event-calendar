@@ -7,6 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('calendar', function() {
+    this.route('year', { path: ':year' }, function() {
+      this.route('month', { path: ':month' });
+    });
+  });
+  this.route('karamba', { path: '/*path' });
 });
 
 export default Router;

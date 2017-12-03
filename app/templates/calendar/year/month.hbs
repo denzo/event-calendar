@@ -1,0 +1,28 @@
+
+
+{{!-- {{#if queryEventsTask.isRunning}}
+  Loading...
+{{else}}
+  {{calendar-month date=model eventsByDay=queryEventsTask.value}}
+{{/if}} --}}
+
+{{!-- {{#liquid-bind queryEventsTask.value use="toLeft" class="demo-container" as |events|}}
+  {{calendar-month date=model eventsByDay=events}}
+{{/liquid-bind}} --}}
+
+{{#calendar-container}}
+  <div class="navigation">
+    <button onclick={{route-action "previousMonth" model}}>&larr;</button>
+    <h1 class="liquid-bind-to-up" data-test-displayed-month>
+      {{liquid-bind (moment-format model "MMMM YYYY")}}
+    </h1>
+    <button onclick={{route-action "nextMonth" model}}>&rarr;</button>
+  </div>
+  <div class="calendar">
+    {{#liquid-if queryEventsTask.isRunning use="fade"}}
+      <div class="loading">Loading...</div>
+    {{else}}
+      {{calendar-month date=model eventsByDay=queryEventsTask.value}}
+    {{/liquid-if}}
+  </div>
+{{/calendar-container}}
