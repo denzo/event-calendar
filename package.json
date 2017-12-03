@@ -1,8 +1,8 @@
 {
-  "name": "animate-from-to",
+  "name": "event-calendar",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for animate-from-to goes here",
+  "description": "Small description for event-calendar goes here",
   "license": "MIT",
   "author": "",
   "directories": {
