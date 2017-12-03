@@ -1,15 +1,3 @@
-
-
-{{!-- {{#if queryEventsTask.isRunning}}
-  Loading...
-{{else}}
-  {{calendar-month date=model eventsByDay=queryEventsTask.value}}
-{{/if}} --}}
-
-{{!-- {{#liquid-bind queryEventsTask.value use="toLeft" class="demo-container" as |events|}}
-  {{calendar-month date=model eventsByDay=events}}
-{{/liquid-bind}} --}}
-
 {{#calendar-container}}
   <div class="navigation">
     <button onclick={{route-action "previousMonth" model}}>&larr;</button>
