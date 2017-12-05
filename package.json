@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-async-functions": "^6.22.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.16.2",
