@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import moment from 'moment';
 import { get, getProperties } from '@ember/object';
 import { computed } from 'ember-decorators/object';
+import { makeArray } from '@ember/array';
 
 
 export default Component.extend({
@@ -12,6 +13,36 @@ export default Component.extend({
    * @type {Moment}
    */
   date: null,
+
+  /**
+   * A list of events to be displayed.
+   *
+   * @type {Array.<EventModel>}
+   */
+  events: null,
+
+  /**
+   * The format that is used on a Moment to match a key in `eventsByDay`
+   *
+   * @type {[type]}
+   */
+  format: 'YYYY-MM-DD',
+
+  /**
+   * the key in the disctionary is a string of the date in a special format and the value is the array of events
+   *
+   * @type {Object}
+   */
+  @computed('events.@each.launchDate', 'format')
+  get eventsByDay() {
+    const { events, format } = getProperties(this, 'events', 'format');
+
+    return events.reduce((result, event) => {
+      const key = moment(get(event, 'launchDate')).format(format);
+      result[key] = makeArray(result[key]).addObject(event); // could this be more Ember :joy:
+      return result;
+    }, {});
+  },
 
   /**
    * It is cheaper to create one instance of today here instead of `calendar-day` component. Performance :muscle:

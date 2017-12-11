@@ -43,18 +43,7 @@ export default Route.extend({
       timeout(1000) // this is the minum delay
     ]);
 
-    // the key in the disctionary is a string of the date in a special format and the value is the array of events
-    const result = queryResult.reduce((result, event) => {
-      const eventLaunchDateISOString = moment(get(event, 'launchDate')).format('YYYY-MM-DD');
-      if (isEmpty(result[eventLaunchDateISOString])) {
-        result[eventLaunchDateISOString] = [event];
-      } else {
-        result[eventLaunchDateISOString].push(event);
-      }
-      return result;
-    }, {});
-
-    return result;
+    return queryResult;
   }).restartable(),
 
   /**
