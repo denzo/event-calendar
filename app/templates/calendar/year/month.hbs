@@ -10,7 +10,7 @@
     {{#liquid-if queryEventsTask.isRunning use="fade"}}
       <div class="loading">Loading...</div>
     {{else}}
-      {{calendar-month date=model eventsByDay=queryEventsTask.value}}
+      {{calendar-month date=model events=queryEventsTask.value}}
     {{/liquid-if}}
   </div>
 {{/calendar-container}}

@@ -6,7 +6,7 @@
     {{calendar-day
       data-test-calendar-day-index=(concat weekIndex "-" dayIndex)
       date=day
-      events=(get eventsByDay (moment-format day "YYYY-MM-DD"))
+      events=(get eventsByDay (moment-format day format))
       isInCurrentMonth=(is-same date day precision="month")
       isToday=(is-same day today precision="day")}}
   {{/calendar-week}}

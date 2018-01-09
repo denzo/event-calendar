@@ -24,8 +24,9 @@ Demo is available at [http://event-calendar.s3-website-us-west-1.amazonaws.com/]
     * `events` the events are retrieved from the `eventsByDay` dictionary that we prepared earlier. We are able to efficiently access the events for the day by using the `get` helper.
     * `isInCurrentMonth` which is used to style the days outside of the currently displayed month.
     * `isToday` is also used to use a specific style.
- 
-
+    
+### Update
+After writing the README, I realised that I could move the grouping of events into the `calendar-month` component instead of having it in the `queryEventsTask` on the `month` route. That way `calendar-month` is easier to use in other places as it would simply expect an array of events.
 
 ## Prerequisites
 
